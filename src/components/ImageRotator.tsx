@@ -7,7 +7,7 @@ interface ImageRotatorProps {
 
 const ImageRotator: React.FC<ImageRotatorProps> = ({ images, direction }) => {
   return (
-    <div className="relative overflow-hidden h-full flex items-center justify-center">
+    <div className="relative overflow-hidden h-full flex items-center justify-center bg-gray-100">
       <div
         className={`w-full h-full flex flex-col gap-10 ${
           direction === 'bottom-to-top' ? 'animate-slide-up' : 'animate-slide-down'

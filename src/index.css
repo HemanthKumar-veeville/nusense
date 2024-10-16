@@ -33,10 +33,10 @@
 /* For mobile screens (max-width: 768px, same as Tailwind's md breakpoint) */
 @media (max-width: 768px) {
   .animate-slide-up {
-    animation: slide-up 80s linear infinite; /* Slower animation on mobile */
+    animation: slide-up 150s linear infinite; /* Slower animation on mobile */
   }
 
   .animate-slide-down {
-    animation: slide-down 80s linear infinite; /* Slower animation on mobile */
+    animation: slide-down 150s linear infinite; /* Slower animation on mobile */
   }
 }
