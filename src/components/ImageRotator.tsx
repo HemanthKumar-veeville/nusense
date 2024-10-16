@@ -7,11 +7,11 @@ interface ImageRotatorProps {
 
 const ImageRotator: React.FC<ImageRotatorProps> = ({ images, direction }) => {
   return (
-    <div className="relative overflow-hidden h-full flex items-center">
+    <div className="relative overflow-hidden h-full flex items-center justify-center">
       <div
         className={`w-full h-full flex flex-col gap-10 ${
           direction === 'bottom-to-top' ? 'animate-slide-up' : 'animate-slide-down'
-        }`}
+        } mx-auto`}
       >
         {/* Duplicate the image list for seamless looping */}
         {images.concat(images).map((image, index) => (
@@ -19,7 +19,7 @@ const ImageRotator: React.FC<ImageRotatorProps> = ({ images, direction }) => {
             key={index}
             src={image}
             alt={`Image ${index}`}
-            className="w-[100px] h-auto md:w-[95%] object-contain"
+            className="w-[90%] h-auto md:w-[95%] object-contain mx-auto"
           />
         ))}
       </div>
