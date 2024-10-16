@@ -12,10 +12,10 @@ const Layout: React.FC = () => {
       </div>
 
       {/* Right side with 3 full-height vertical image rotators */}
-      <div className="w-full md:w-3/4 flex flex-col md:flex-row gap-4 justify-around bg-white h-full">
-        <ImageRotator images={Column01} />
-        <ImageRotator images={Column02} />
-        <ImageRotator images={Column03} />
+      <div className="w-full md:w-3/4 flex flex-col md:flex-row gap-4 justify-around bg-gray-100 h-full px-12">
+        <ImageRotator images={Column01} direction="bottom-to-top" />
+        <ImageRotator images={Column02} direction="top-to-bottom" />
+        <ImageRotator images={Column03} direction="bottom-to-top" />
       </div>
     </div>
   );
