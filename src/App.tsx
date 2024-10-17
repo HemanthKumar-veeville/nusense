@@ -1,10 +1,10 @@
 import React from 'react';
-import Layout from './components/Layout';
+import NewLayout from './components/NewLayout';
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <Layout />
+      <NewLayout />
     </div>
   );
 };
