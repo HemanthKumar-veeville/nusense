@@ -15,19 +15,18 @@ const NewLayout: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative w-screen h-screen bg-black flex items-center justify-center">
+    <div className="relative w-screen h-screen bg-black flex items-center justify-center overflow-hidden">
       {Column04.map((image, index) => (
         <img
           key={index}
           src={image}
           alt={`Transition ${index}`}
-          className={`absolute w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
-            index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+          className={`absolute w-full h-full object-cover transform transition-transform duration-1000 ease-in-out ${
+            index === currentImageIndex ? 'translate-x-0' : 'translate-x-full'
           }`}
+          style={{ transitionDelay: '0.5s' }}
         />
       ))}
-      {/* Optional stealth-like effect overlay */}
-      <div className="absolute inset-0 bg-black opacity-30"></div>
     </div>
   );
 };
