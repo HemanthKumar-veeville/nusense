@@ -9,7 +9,7 @@ const NewLayout: React.FC = () => {
       setCurrentImageIndex((prevIndex) =>
         prevIndex === Column04.length - 1 ? 0 : prevIndex + 1
       );
-    }, 3000); // Change image every 3 seconds
+    }, 6000); // Change image every 6 seconds for a slower transition
 
     return () => clearInterval(interval);
   }, []);
@@ -21,13 +21,12 @@ const NewLayout: React.FC = () => {
           key={index}
           src={image}
           alt={`Transition ${index}`}
-          className={`absolute w-full h-full object-cover transition-transform duration-1000 ease-in-out ${
+          className={`absolute w-full h-full object-cover transition-all duration-[4000ms] ease-in-out ${
             index === currentImageIndex
-              ? 'translate-x-0 z-20' // Current image stays in place
-              : index === (currentImageIndex - 1 + Column04.length) % Column04.length
-              ? 'translate-x-0 z-10' // Previous image stays in place until fully covered
-              : 'translate-x-full z-0' // Hide other images
+              ? 'opacity-100 filter-none scale-100 z-20' // Active image fully visible, no blur, normal size
+              : 'opacity-0 filter-blur-md scale-110 z-10' // Previous image fades out, blurs, and scales up
           }`}
+          style={{ transitionProperty: 'opacity, filter, transform' }} // Ensure all properties (opacity, filter, transform) transition
         />
       ))}
     </div>
