@@ -1,7 +1,8 @@
 import React from 'react';
-
+// import FlipCard from "./FlipCard"
+import ImageSlider from './ImageSlider';
 interface ImageRotatorProps {
-  images: string[];
+  images: Object[];
   direction: 'top-to-bottom' | 'bottom-to-top'; // New prop to control direction
 }
 
@@ -14,13 +15,9 @@ const ImageRotator: React.FC<ImageRotatorProps> = ({ images, direction }) => {
         } mx-auto`}
       >
         {/* Duplicate the image list for seamless looping */}
-        {images.concat(images).map((image, index) => (
-          <img
-            key={index}
-            src={image}
-            alt={`Image ${index}`}
-            className="w-[90%] h-auto md:w-[95%] object-contain mx-auto"
-          />
+        {images.concat(images).map((image) => (
+        //  <FlipCard index={index} image={image} />
+        <ImageSlider images={Object.values(image)}/>
         ))}
       </div>
     </div>
