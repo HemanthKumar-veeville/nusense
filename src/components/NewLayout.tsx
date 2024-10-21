@@ -9,10 +9,8 @@ interface TextProps {
 const Text: React.FC<TextProps> = ({ currentIndex, isVisible }) => {
   return (
     <div
-      className={`absolute top-0 left-0 w-full h-full flex items-center justify-center transition-all duration-[4000ms] ease-in-out z-30
-      ${isVisible ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-110 translate-y-4'} 
-      will-change: opacity, transform // Hint to the browser for optimization
-      `}
+      className={`absolute top-0 left-0 w-full h-full flex items-center justify-center transition-opacity duration-[4000ms] ease-in-out z-30
+      ${isVisible ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-110 translate-y-4'}`}
       style={{ transitionProperty: 'opacity, transform' }}
     >
       <img
@@ -39,13 +37,15 @@ const NewLayout: React.FC = () => {
   }, []);
 
   useEffect(() => {
+    // Show text when the image is fully visible
     const textTimeout = setTimeout(() => {
       setShowText(true);
-    }, 1000); // 1 second delay for text after the image
+    }, 1000); // Show text after 4 seconds
 
+    // Hide text smoothly with fade out just before the next image starts
     const hideTextTimeout = setTimeout(() => {
       setShowText(false);
-    }, 7000); // 6 seconds total (show text for 5 seconds)
+    }, 6000); // Start fading out text at 7 seconds
 
     return () => {
       clearTimeout(textTimeout);
