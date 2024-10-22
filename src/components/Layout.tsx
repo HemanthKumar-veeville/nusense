@@ -1,5 +1,4 @@
 import React from "react";
-import Logo from "./Logo";
 import ImageRotator from "./ImageRotator";
 import { Column01, Column02, Column03 } from "../assets/assets";
 import ProfileCard from "./ProfileCard";

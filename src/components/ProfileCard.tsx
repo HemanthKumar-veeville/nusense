@@ -3,7 +3,6 @@ import {
   FaTwitter,
   FaFacebookF,
   FaGooglePlusG,
-  FaBehance,
   FaInstagram,
 } from "react-icons/fa";
 import RajeshProfile from "../assets/rajesh.jpg";
