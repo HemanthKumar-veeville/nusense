@@ -28,9 +28,21 @@ import c4a from "./column3/c4a.png";
 import c4b from "./column3/c4b.png";
 import c5a from "./column3/c5a.png";
 import c5b from "./column3/c5b.png";
+import cxa from "./Column01/Column01A.png";
+import cxb from "./Column01/Column01B.png";
+import cxc from "./Column01/Column01C.png";
+import cxd from "./Column01/Column01D.png";
+import cxe from "./Column01/Column01E.png";
+import cxf from "./Column02/Column02A.png";
+import cxg from "./Column02/Column02B.png";
+import cxh from "./Column02/Column02C.png";
+import cxi from "./Column02/Column02D.png";
+import cxj from "./Column02/Column02E.png";
+import cxk from "./Column03/Column03A.png";
+import cxl from "./Column03/Column03B.png";
 
-const Column01 = [{a1a, a1b}, {a2a, a2b}, {a3a, a3b}, {a4a, a4b}, {a5a, a5b}];
-const Column02 = [{b1a, b1b}, {b2a, b2b}, {b3a, b3b}, {b4a, b4b}, {b5a, b5b}];
-const Column03 = [{c1a, c1b}, {c2a, c2b}, {c3a, c3b}, {c4a, c4b}, {c5a, c5b}];
+const Column01 = [{a1a, a1b}, {cxa}, {a2a, a2b}, {cxb}, {a3a, a3b}, {a4a, a4b},  {cxc},{a5a, a5b}, {cxh}];
+const Column02 = [{b1a, b1b}, {cxk},{b2a, b2b}, {cxd}, {b3a, b3b}, {b4a, b4b}, {cxe}, {b5a, b5b}, {cxi}];
+const Column03 = [{c1a, c1b}, {cxf}, {c2a, c2b},{cxl}, {c3a, c3b}, {cxg}, {c4a, c4b}, {c5a, c5b}, {cxj}];
 
 export { Column01, Column02, Column03 };

@@ -9,13 +9,28 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    const randomInterval = Math.random() * 5000 + 2000; // Random interval between 2s and 5s
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
-    }, randomInterval); // Randomize the transition interval
+    if (images.length > 1) {
+      const randomInterval = Math.random() * 5000 + 2000; // Random interval between 2s and 5s
+      const interval = setInterval(() => {
+        setCurrentIndex((prevIndex) =>
+          prevIndex === images.length - 1 ? 0 : prevIndex + 1
+        );
+      }, randomInterval); // Randomize the transition interval
 
-    return () => clearInterval(interval); // Clear the interval on component unmount
+      return () => clearInterval(interval); // Clear the interval on component unmount
+    }
   }, [images.length, currentIndex]);
+
+  // Render a single image without the slider if only one image is provided
+  if (images.length === 1) {
+    return (
+      <div className="relative w-full max-w-lg mx-auto">
+        <div className="overflow-hidden">
+          <FlipCard index={0} image={images[0]} />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="relative w-full max-w-lg mx-auto">
