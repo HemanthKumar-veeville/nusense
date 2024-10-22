@@ -10,7 +10,7 @@ const Layout: React.FC = () => {
     <div className="h-screen flex flex-col md:flex-row">
       {/* Mobile View: Logo on top and single image rotator */}
       <div className="w-full flex justify-center items-center p-4 bg-gray-100 md:hidden">
-        <ProfileCard />
+        <ProfileCard isMobile={true} />
       </div>
 
       <div className="w-full flex justify-center items-center flex-grow md:hidden">
@@ -19,7 +19,7 @@ const Layout: React.FC = () => {
 
       {/* Desktop View: Logo on the left and 3 image rotators */}
       <div className="hidden md:flex w-full md:w-1/4 bg-gray-100 justify-center items-center">
-        <ProfileCard />
+        <ProfileCard isMobile={false} />
       </div>
 
       <div className="hidden md:flex w-full md:w-3/4 gap-4 justify-around bg-gray-100 h-full px-12">
