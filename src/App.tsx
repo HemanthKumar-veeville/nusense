@@ -1,10 +1,10 @@
-import React from 'react';
-import NewLayout from './components/NewLayout';
+import React from "react";
+import Layout from "./components/Layout";
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <NewLayout />
+    <div className="App  font-poppins">
+      <Layout />
     </div>
   );
 };
